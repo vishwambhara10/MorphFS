@@ -2,85 +2,49 @@
 
 A File Management System Built One Data Structure At A Time.
 
-## About The Project
+## Vision
 
-MorphFS is a long-term project created as part of the Think Morph journey.
+Most people learn Data Structures through isolated examples and textbook exercises.
 
-Instead of learning Data Structures through isolated examples and textbook problems, MorphFS evolves by applying each Data Structure to solve real system design challenges.
+MorphFS takes a different approach.
 
-The goal is not just to learn Data Structures, but to understand:
+Instead of learning concepts independently, we continuously evolve the same system. Every new Data Structure is introduced to solve a limitation discovered in the previous version.
 
-* Why they exist
+The goal is to understand:
+
+* Why Data Structures exist
 * What problems they solve
-* Their limitations
-* How systems evolve over time
+* Their tradeoffs
+* How real systems evolve
 
 ---
 
-## Current Version
+## Long-Term Goal
 
-### MorphFS V1 - Arrays
+Build a terminal-based file management system by progressively applying Data Structures and Algorithms.
 
-Features:
-
-* Add File
-* View Files
-
-Concepts Used:
-
-* Arrays
-* Indexing
-* Fixed Size Storage
-
-### Sample Output
-
-```text
-1. Add File
-2. View Files
-3. Exit
-
-Enter File Name:
-resume.pdf
-
-File Added Successfully!
-
-0 -> resume.pdf
-```
-
----
-
-## What We Learned
-
-Arrays provide:
-
-* Fast Access
-* Simple Storage
-* Predictable Memory Layout
-
-However, Arrays require storage size to be defined in advance.
-
-This limitation becomes the motivation for the next evolution of MorphFS.
+Each version of MorphFS introduces new capabilities while solving problems uncovered in earlier implementations.
 
 ---
 
 ## Evolution Roadmap
 
-| Version | Data Structure | Purpose          |
-| ------- | -------------- | ---------------- |
-| V1      | Arrays         | File Storage     |
-| V2      | Linked Lists   | Dynamic Storage  |
-| V3      | Stacks         | Undo Operations  |
-| V4      | Queues         | Batch Processing |
-| V5      | Trees          | Folder Hierarchy |
-| V6      | Hash Tables    | Fast Search      |
+* Arrays
+* Linked Lists
+* Stacks
+* Queues
+* Trees
+* Hash Tables
+* Algorithms
+* System Optimizations
 
 ---
 
 ## Think Morph Framework
 
-Every evolution of MorphFS follows the same process:
-
 Problem → Solution → Limitation → Evolution
+
+Every version of MorphFS follows this philosophy.
 
 ---
 
@@ -89,30 +53,13 @@ Problem → Solution → Limitation → Evolution
 ```text
 MorphFS
 │
-├── README.md
-│
-└── v1-arrays
-    └── morphfs.c
+├── v1-arrays
+├── v2-linked-lists
+├── v3-stacks
+├── v4-queues
+├── v5-trees
+└── v6-hash-tables
 ```
-
----
-
-## Future Goals
-
-* Real File Management
-* Dynamic Storage
-* Undo Functionality
-* Folder Navigation
-* Search System
-* Terminal-Based File Manager
-
----
-
-## YouTube Series
-
-This project is being built publicly as part of the Think Morph YouTube series.
-
-Each version of MorphFS corresponds to a new learning milestone and a new Data Structure.
 
 ---
 
