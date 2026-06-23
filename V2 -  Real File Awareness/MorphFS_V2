@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <time.h>
+
+typedef struct
+{
+    char name[260];
+    long size;
+    char modified[100];
+
+} FileInfo;
+
+int getFileInfo(const char *path, FileInfo *file)
+{
+    struct stat fileStat;
+
+    if (stat(path, &fileStat) != 0)
+    {
+        return 0;
+    }
+
+    /* Extract filename from path */
+    char *filename = strrchr(path, '\\');
+
+    if (filename != NULL)
+    {
+        strcpy(file->name, filename + 1);
+    }
+    else
+    {
+        strcpy(file->name, path);
+    }
+
+    file->size = fileStat.st_size; 
+
+    strcpy(file->modified, ctime(&fileStat.st_mtime));
+
+    return 1;
+}
+
+void displayFileInfo(FileInfo file)
+{
+    printf("\n===== FILE INFORMATION =====\n");
+
+    printf("Name          : %s\n", file.name);
+    printf("Size          : %ld bytes\n", file.size);
+    printf("Last Modified : %s", file.modified);
+}
+
+int main()
+{
+    char path[260];
+
+    FileInfo file;
+
+    printf("Enter file path: ");
+
+    fgets(path, sizeof(path), stdin);
+
+    path[strcspn(path, "\n")] = '\0';
+
+    if (getFileInfo(path, &file))
+    {
+        displayFileInfo(file);
+    }
+    else
+    {
+        printf("\nFile not found or cannot access file.\n");
+    }
+
+    return 0;
+}
